@@ -5,31 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Server.unity
-    guid: c94cd2d1db6f31144912e5e9a6ae8ac6
   - enabled: 1
-    path: Assets/Scenes/Middle.unity
-    guid: 31852354cafd901479a8d94d6f9e2c5c
-  - enabled: 0
-    path: Assets/Scenes/WindowsClient.unity
+    path: Assets/Scenes/OculusClient.unity
     guid: 11abd380cc18c98489092f59852a7863
-  - enabled: 0
-    path: Assets/Scenes/AndroidClient.unity
-    guid: 1a2845911795a36418d3b4f63e05af64
-  - enabled: 0
-    path: Assets/Scenes/MacClient.unity
-    guid: ec4657eb5102f43409a0c17aafa60246
-  - enabled: 0
-    path: Assets/Scenes/LinuxClient.unity
-    guid: a0adb364b8cd5114994c19551b2e2103
-  - enabled: 0
-    path: Assets/Scenes/iOSClient.unity
-    guid: 7854388ef301c36448b49f0ea0387dec
-  - enabled: 0
-    path: Assets/Scenes/BotClient.unity
-    guid: a24ae65ae2f2470488a30400a70d8e91
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f074dada241e64b45b9ed13e1826ae1e, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 3abe23886dcb8db46b879a5aa90acd52, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a20f89add13521341a2eda13c0cc5d9c, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 704242ab1b4d9495cb97e08477884fb5, type: 2}
   m_UseUCBPForAssetBundles: 0

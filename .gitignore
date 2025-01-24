@@ -70,3 +70,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+.DS_Store
+.utmp/RelWithDebInfo/b5e5u2wz/arm64-v8a/configure_fingerprint.bin
+.utmp/RelWithDebInfo/b5e5u2wz/armeabi-v7a/configure_fingerprint.bin
+*.bin
+/.utmp

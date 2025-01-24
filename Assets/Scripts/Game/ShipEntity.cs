@@ -298,11 +298,11 @@ public class ShipEntity : TransformEntity
 
             if (type == EObject.SMALL_SHIP)
             {
-                if (transform.position.y < GameServer.DEATH_Y + CUSHION)
+                if (transform.position.y < -80f + CUSHION)
                 {
                     transform.position += Vector3.up * DRIFT * Time.fixedDeltaTime;
                 }
-                else if (transform.position.y > -GameServer.DEATH_Y - CUSHION)
+                else if (transform.position.y > 80f - CUSHION)
                 {
                     transform.position -= Vector3.up * DRIFT * Time.fixedDeltaTime;
                 }

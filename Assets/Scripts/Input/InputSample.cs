@@ -4,6 +4,7 @@ public enum EInput
 {
     DESKTOP = 0,
     MOBILE = 1,
+    VIRTUAL = 2
 }
 
 public enum EButtonState
@@ -250,6 +251,13 @@ public class InputSample
             sample.Initialise();
             sample.ReadFromStream(ref stream);
 
+            return sample;
+        }
+        else if (type == EInput.VIRTUAL)
+        {
+            VirtualInputSample sample = new VirtualInputSample();
+            sample.Initialise();
+            sample.ReadFromStream(ref stream);
             return sample;
         }
 
