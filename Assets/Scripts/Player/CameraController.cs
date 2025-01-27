@@ -89,10 +89,10 @@ public class CameraController : MonoBehaviour
         if (inputType == EInput.VIRTUAL)
         {
             Quaternion headsetRotation = InputTracking.GetLocalRotation(XRNode.Head);
-            headsetRotation.x = 0f;
+            headsetRotation.z = 0f;
 
-            yaw = headsetRotation.eulerAngles.z;
-            pitch = headsetRotation.eulerAngles.y;
+            yaw = headsetRotation.eulerAngles.y * Mathf.Deg2Rad;
+            pitch = -headsetRotation.eulerAngles.x * Mathf.Deg2Rad;
 			         
             transform.localRotation = headsetRotation; // in theory should NOT pull from any source other than the Quaternion...
         }
@@ -117,22 +117,22 @@ public class CameraController : MonoBehaviour
 
         Vector3 target = focus.position + f * range;
 
-        //readjust the camera position if there is a collider in the way
-        if (Physics.SphereCast(focus.position, collisionRadius, (target - focus.position).normalized, out collInfo, range, blockingMask.value))
-        {
-            cameraElbow.position = collInfo.point + collInfo.normal * collisionRadius;
-        }
-        else
-        {
-            cameraElbow.position = focus.position + f * range;
-        }
+        // readjust the camera position if there is a collider in the way
+         if (Physics.SphereCast(focus.position, collisionRadius, (target - focus.position).normalized, out collInfo, range, blockingMask.value))
+         {
+             cameraElbow.position = collInfo.point + collInfo.normal * collisionRadius;
+         }
+         else
+         {
+             cameraElbow.position = focus.position + f * range;
+         }
 
         // transform.localRotation = Quaternion.LookRotation(-lf);
     }
 
     public void TogglePerspective() {}
 
-    public void CameraCorrection(Quaternion oldFrame, Quaternion newFrame)
+    public void CameraCorrection(Quaternion oldFrame, Quaternion newFrame) // issue?
     {
         Vector3 of = oldFrame * Vector3.forward;
         Vector3 nf = newFrame * Vector3.forward;

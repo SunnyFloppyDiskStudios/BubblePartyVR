@@ -19,6 +19,8 @@ ______
 * ShipEntity - Removed server code dependancy
 * CameraController - Rewritten to support VR
 * VirtualInputManager, VirtualInputSample - New code based on desktop variants for inputs.
+* InputSample - Add virtual manager/sampling
+
 
 * UI Canvas - Put in world space so that it can be displayed in VR.
 

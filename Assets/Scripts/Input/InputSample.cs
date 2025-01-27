@@ -1,3 +1,4 @@
+using System.Drawing.Printing;
 using UnityEngine;
 
 public enum EInput
@@ -15,20 +16,20 @@ public enum EButtonState
     RELEASED = 3,
 }
 
-public class Button
+public class Button // button handler?
 {
     public KeyCode keyCode;
     public EButtonState state;
     public bool changeDetected = false;
     public bool requireRelease = false;
 
-    public Button(KeyCode _keyCode)
+    public Button(KeyCode _keyCode) // button itself
     {
         keyCode = _keyCode;
         state = EButtonState.RELEASED;
     }
 
-    public void Poll(bool menuOverride, bool fuzz = false)
+    public void Poll(bool menuOverride, bool fuzz = false) // pain
     {
         if (changeDetected)
         {
@@ -36,6 +37,7 @@ public class Button
         }
 
         bool keyState = Input.GetKey(keyCode);
+        Debug.Log("key state: " + keyState);
 
         if (fuzz)
         {
@@ -62,7 +64,7 @@ public class Button
         }
         else
         {
-            //check that we weren't forces into a release
+            //check that we weren't forced into a release
             if (!keyState)
             {
                 requireRelease = false;
@@ -85,8 +87,7 @@ public class Button
             }
         }
     }
-
-    public void PollAutomatic(bool automatedState, bool menuOverride, bool fuzz = false)
+    public void PollAutomatic(bool automatedState, bool menuOverride, bool fuzz = false) // bots
     {
         if (changeDetected)
         {
@@ -172,8 +173,8 @@ public class InputSample
 
     public virtual void Initialise()
     {
-        jump = new Button(KeyCode.Space);
-        fire = new Button(KeyCode.Mouse0);
+        jump = new Button(KeyCode.JoystickButton0); // jump
+        fire = new Button(KeyCode.Mouse0); // redundant?
     }
 
     public virtual Vector2 GetMovementVector()

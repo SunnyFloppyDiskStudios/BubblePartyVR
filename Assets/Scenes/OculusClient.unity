@@ -22972,6 +22972,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 646063475}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &648523112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 648523113}
+  m_Layer: 0
+  m_Name: Rectangle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &648523113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648523112}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &649869988
 GameObject:
   m_ObjectHideFlags: 0
@@ -28927,6 +28958,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4164511204261677510, guid: bd60e2f0a445c1c4d9c5e7204968f60f, type: 3}
+--- !u!1 &884948053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 884948054}
+  m_Layer: 0
+  m_Name: border
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &884948054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884948053}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &886163914
 GameObject:
   m_ObjectHideFlags: 0
@@ -80052,6 +80114,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1716564804}
+    - target: {fileID: 2346186943687101874, guid: 58d04c7169e1f5b49924bf712d7201ba, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2346186943687101874, guid: 58d04c7169e1f5b49924bf712d7201ba, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -284.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3600663537256928582, guid: 58d04c7169e1f5b49924bf712d7201ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -80112,6 +80182,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SettingsButtonPressed
       objectReference: {fileID: 0}
+    - target: {fileID: 5934005000269318785, guid: 58d04c7169e1f5b49924bf712d7201ba, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -710
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934005000269318785, guid: 58d04c7169e1f5b49924bf712d7201ba, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -290
+      objectReference: {fileID: 0}
     - target: {fileID: 6046774451559214118, guid: 58d04c7169e1f5b49924bf712d7201ba, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -80120,6 +80198,14 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EntityLimitSliderChanged
       objectReference: {fileID: 0}
+    - target: {fileID: 6115086273626365114, guid: 58d04c7169e1f5b49924bf712d7201ba, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115086273626365114, guid: 58d04c7169e1f5b49924bf712d7201ba, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 6a3417eb7bcba40489a039f07ba650d2, type: 3}
     - target: {fileID: 6704654503138034398, guid: 58d04c7169e1f5b49924bf712d7201ba, type: 3}
       propertyPath: m_Name
       value: DesktopCanvas
@@ -80244,6 +80330,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1716564804}
+    - target: {fileID: 8418374742346292364, guid: 58d04c7169e1f5b49924bf712d7201ba, type: 3}
+      propertyPath: m_Text
+      value: Attempting to connect to the server...
+      objectReference: {fileID: 0}
     - target: {fileID: 8688771231392499065, guid: 58d04c7169e1f5b49924bf712d7201ba, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -80302,3 +80392,5 @@ SceneRoots:
   - {fileID: 763191990}
   - {fileID: 909669454}
   - {fileID: 1696002740}
+  - {fileID: 648523113}
+  - {fileID: 884948054}
