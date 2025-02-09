@@ -11,8 +11,9 @@ Jump: A (Button 0)
 
 
 Current Bugs:
-1. Finnicky Camera
-2. The player isn't connecting to the server (?)
+1. camera dont let you look around and then up/down??
+2. uh
+3. movement no workie :(
 
 ______
 
