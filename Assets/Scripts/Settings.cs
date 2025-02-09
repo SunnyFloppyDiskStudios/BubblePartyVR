@@ -49,7 +49,7 @@ public class Settings
     }
 
     //signs buffers and prevents older clients from joining
-    public const int VERSION = 6;
+    public const int VERSION = 7;
 
     public static EPlatformType platformType;
 

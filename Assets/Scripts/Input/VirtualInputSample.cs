@@ -29,26 +29,26 @@ public class VirtualInputSample : InputSample
     {
         // movement code --
         Vector2 vector = Vector2.zero;
-        //
-        // if (Input.GetAxis("Horizontal") < 0.2f)
-        // {
-        //     vector.x += 1.0f;
-        // }
-        //
-        // if (Input.GetAxis("Horizontal") > 0.2f)
-        // {
-        //     vector.x += -1.0f;
-        // }
-        //
-        // if (Input.GetAxis("Vertical") > 0.2f)
-        // {
-        //     vector.y += 1.0f;
-        // }
-        //
-        // if (Input.GetAxis("Vertical") < 0.2f)
-        // {
-        //     vector.y += -1.0f;
-        // }
+        
+        if (Input.GetAxis("Horizontal") < 0.2f)
+        {
+            vector.x += 1.0f;
+        }
+        
+        if (Input.GetAxis("Horizontal") > 0.2f)
+        {
+            vector.x += -1.0f;
+        }
+        
+        if (Input.GetAxis("Vertical") > 0.2f)
+        {
+            vector.y += 1.0f;
+        }
+        
+        if (Input.GetAxis("Vertical") < 0.2f)
+        {
+            vector.y += -1.0f;
+        }
         // --
 
         //normalise vector that's diagonal
