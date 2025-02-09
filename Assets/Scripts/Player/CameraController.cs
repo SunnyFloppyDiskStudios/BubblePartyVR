@@ -95,6 +95,8 @@ public class CameraController : MonoBehaviour
             pitch = -headsetRotation.eulerAngles.x * Mathf.Deg2Rad;
 			         
             transform.localRotation = headsetRotation; // in theory should NOT pull from any source other than the Quaternion...
+            
+            // for some reason when you turn 180 y going up/down not work or something idk
         }
 
         if (fuzz)

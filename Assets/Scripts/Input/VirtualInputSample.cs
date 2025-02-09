@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
 
 public class VirtualInputSample : InputSample
 {
@@ -9,6 +7,8 @@ public class VirtualInputSample : InputSample
     public Button right;
     public Button forward;
     public Button backward;
+
+    private InputAction moveAction;
 
     public override void Initialise()
     {
@@ -20,10 +20,14 @@ public class VirtualInputSample : InputSample
         right = new Button(KeyCode.D);
         forward = new Button(KeyCode.W);
         backward = new Button(KeyCode.S);
+
+        moveAction = InputSystem.actions.FindAction("Move");
     }
+    
 
     public override Vector2 GetMovementVector()
     {
+        // movement code --
         Vector2 vector = Vector2.zero;
 
         if (Input.GetAxis("Horizontal") < 0.2f)
@@ -45,6 +49,7 @@ public class VirtualInputSample : InputSample
         {
             vector.y += -1.0f;
         }
+        // --
 
         //normalise vector that's diagonal
         if (vector.x != 0.0f && vector.y != 0.0f)
