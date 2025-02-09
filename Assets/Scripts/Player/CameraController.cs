@@ -43,6 +43,8 @@ public class CameraController : MonoBehaviour
     public bool fuzz = false;
     public bool isRouted = false;
 
+    private Quaternion prevHeadsetRotation;
+
     void Start ()
     {
         GetComponent<Camera>().depthTextureMode |= DepthTextureMode.Depth;
@@ -86,19 +88,25 @@ public class CameraController : MonoBehaviour
             range = trueRange;
         }
 
-        if (inputType == EInput.VIRTUAL)
+        if (inputType == EInput.VIRTUAL) // for some reason when you turn 180 y going up/down not work or something idk (((still broken)))
         {
+            
             Quaternion headsetRotation = InputTracking.GetLocalRotation(XRNode.Head);
-            headsetRotation.z = 0f;
+            
+            // headsetRotation.z = 0f;
 
-            yaw = headsetRotation.eulerAngles.y * Mathf.Deg2Rad;
+            float prevYaw = prevHeadsetRotation.eulerAngles.y * Mathf.Deg2Rad;
+            float currYaw = headsetRotation.eulerAngles.y * Mathf.Deg2Rad;
+            
+            float diffYaw = currYaw - prevYaw;
+            
+            yaw += diffYaw;
             pitch = -headsetRotation.eulerAngles.x * Mathf.Deg2Rad;
 			         
-            transform.localRotation = headsetRotation; // in theory should NOT pull from any source other than the Quaternion...
-            
-            // for some reason when you turn 180 y going up/down not work or something idk
+            transform.localRotation = headsetRotation; // does not pull from any source other than headsetRotation
+           
+            prevHeadsetRotation = headsetRotation;
         }
-
         if (fuzz)
         {
             yaw = Random.Range(-Mathf.PI, Mathf.PI);
@@ -110,7 +118,7 @@ public class CameraController : MonoBehaviour
             focus = defaultFocus;
         }
 
-        // cameraElbow.rotation = frame;
+        cameraElbow.rotation = frame;
 
         Vector3 lf = MathExtension.DirectionFromYawPitch(yaw, pitch);
         Vector3 f = cameraElbow.TransformDirection(lf);
@@ -118,18 +126,17 @@ public class CameraController : MonoBehaviour
         RaycastHit collInfo;
 
         Vector3 target = focus.position + f * range;
-
-        // readjust the camera position if there is a collider in the way
-         if (Physics.SphereCast(focus.position, collisionRadius, (target - focus.position).normalized, out collInfo, range, blockingMask.value))
-         {
-             cameraElbow.position = collInfo.point + collInfo.normal * collisionRadius;
-         }
-         else
-         {
-             cameraElbow.position = focus.position + f * range;
-         }
-
-        // transform.localRotation = Quaternion.LookRotation(-lf);
+        
+        if (Physics.SphereCast(focus.position, collisionRadius, (target - focus.position).normalized, out collInfo, range, blockingMask.value))
+        {
+            cameraElbow.position = collInfo.point + collInfo.normal * collisionRadius;
+        }
+        else
+        {
+            cameraElbow.position = focus.position + f * range;
+        }
+        
+        transform.localRotation = Quaternion.LookRotation(-lf);
     }
 
     public void TogglePerspective() {}
