@@ -1,5 +1,6 @@
 using System.Drawing.Printing;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public enum EInput
 {
@@ -20,7 +21,7 @@ public class Button // button handler?
 {
     public KeyCode keyCode;
     public EButtonState state;
-    public bool changeDetected = false;
+    public bool changeDetected = false; 
     public bool requireRelease = false;
 
     public Button(KeyCode _keyCode) // button itself
@@ -29,20 +30,16 @@ public class Button // button handler?
         state = EButtonState.RELEASED;
     }
 
-    public void Poll(bool menuOverride, bool fuzz = false) // pain
+    public void Poll(bool menuOverride, bool keyState, bool fuzz = false) // seeing what keys are pressed
     {
+        
         if (changeDetected)
         {
             return;
         }
-
-        bool keyState = Input.GetKey(keyCode);
-        Debug.Log("key state: " + keyState);
-
-        if (fuzz)
-        {
-            keyState = Random.Range(0, 2) == 1 ? true : false;
-        }
+        
+        // keyState = Input.GetKey(keyCode); // <-- gets the key being pressed
+        // Debug.Log("key state: " + keyState);
 
         if (keyState && !menuOverride && !requireRelease)
         {

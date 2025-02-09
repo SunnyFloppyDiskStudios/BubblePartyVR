@@ -1,15 +1,15 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class VirtualInputSample : InputSample
 {
+    // the keys
     public Button left;
     public Button right;
     public Button forward;
     public Button backward;
-
-    private InputAction moveAction;
-
+    
     public override void Initialise()
     {
         type = EInput.VIRTUAL;
@@ -20,36 +20,16 @@ public class VirtualInputSample : InputSample
         right = new Button(KeyCode.D);
         forward = new Button(KeyCode.W);
         backward = new Button(KeyCode.S);
-
-        moveAction = InputSystem.actions.FindAction("Move");
     }
     
-
     public override Vector2 GetMovementVector()
     {
         // movement code --
         Vector2 vector = Vector2.zero;
+    
+        // float XInput = moveAction.ReadValue<Vector2>().x;
+        // float YInput = moveAction.ReadValue<Vector2>().y;
         
-        if (Input.GetAxis("Horizontal") < 0.2f)
-        {
-            vector.x += 1.0f;
-        }
-        
-        if (Input.GetAxis("Horizontal") > 0.2f)
-        {
-            vector.x += -1.0f;
-        }
-        
-        if (Input.GetAxis("Vertical") > 0.2f)
-        {
-            vector.y += 1.0f;
-        }
-        
-        if (Input.GetAxis("Vertical") < 0.2f)
-        {
-            vector.y += -1.0f;
-        }
-        // --
 
         //normalise vector that's diagonal
         if (vector.x != 0.0f && vector.y != 0.0f)
