@@ -11,10 +11,8 @@ Jump: A (Button 0)
 
 
 Current Bugs:
-1. camera dont let you look around and then up/down??
-2. uh
-3. movement no workie :(
-
+1. none this is perfect
+2. not a bug but needs some UI :)
 ______
 
 * ShipEntity - Removed server code dependancy
