@@ -136,7 +136,7 @@ public class MenuManager : MonoBehaviour
     public void ActivateMenu()
     {
         //set initial state of option elements
-        sensitivitySlider.value = Mathf.InverseLerp(minSensitivity, maxSensitivity, client.inputManager.cameraController.sensitivity);
+        // sensitivitySlider.value = Mathf.InverseLerp(minSensitivity, maxSensitivity, client.inputManager.cameraController.sensitivity);
 
         Add(basePanel);
 
@@ -276,6 +276,11 @@ public class MenuManager : MonoBehaviour
         if (inputType == EInput.MOBILE)
         {
             mobileKeyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.ASCIICapable, false, false, false);
+        }
+
+        if (inputType == EInput.VIRTUAL)
+        {
+            mobileKeyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false);
         }
     }
 

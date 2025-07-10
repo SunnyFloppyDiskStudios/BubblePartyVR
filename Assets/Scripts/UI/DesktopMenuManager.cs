@@ -8,14 +8,14 @@ public class DesktopMenuManager : MenuManager
     {
         base.Initialise();
 
-        if (Screen.fullScreen)
-        {
-            windowText.text = "Windowed";
-        }
-        else
-        {
-            windowText.text = "Full-Screen";
-        }
+        // if (Screen.fullScreen)
+        // {
+        //     windowText.text = "Windowed";
+        // }
+        // else
+        // {
+        //     windowText.text = "Full-Screen";
+        // }
     }
 
     public override void PerFrameUpdate()

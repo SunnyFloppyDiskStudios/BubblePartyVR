@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine.XR;
+﻿using UnityEngine.XR;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -31,8 +28,8 @@ public class CameraController : MonoBehaviour
     //allow the editor to change this value within reason
     public float sensitivity = 0.0f;
 
-    public KeyCode connect = KeyCode.Mouse0;
-    public KeyCode release = KeyCode.Escape;
+    public KeyCode connect = KeyCode.JoystickButton0;
+    public KeyCode release = KeyCode.JoystickButton6;
 
     public TouchData touchData;
 
@@ -45,7 +42,7 @@ public class CameraController : MonoBehaviour
 
     private Quaternion prevHeadsetRotation;
 
-    void Start ()
+    void Start() // <-- why did you put a space between Start and ()??? >:(
     {
         GetComponent<Camera>().depthTextureMode |= DepthTextureMode.Depth;
     }
